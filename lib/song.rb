@@ -45,6 +45,11 @@ class Song
   end
   
   def self.new_from_filename(filename)
+    
+    #split the string by the period "." symbol and take the first element in that array to 
+    #remove the trailing "".mp3".  Next split it again by the hyphon so we're left with an array
+    #where the first element is the artist and the second is the song name
+    
     song_details = filename.split(".")[0].split("-")
     song = self.new_by_name(song_details[1].strip)
     song.artist_name = song_details[0].strip
